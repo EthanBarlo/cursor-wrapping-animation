@@ -18,6 +18,7 @@ export default function MotionMouse() {
   const height = useSpring(30, springOptions);
   const borderRadius = useSpring(width.get(), springOptions);
 
+  // This effect is what makes the cursor follow the mouse
   useEffect(() => {
     const onMouseMove = (event: MouseEvent) => {
       // Dont move is the target is set
@@ -40,8 +41,8 @@ export default function MotionMouse() {
     return () => window.removeEventListener('mousemove', onMouseMove);
   }, [MouseState]);
 
+  // This effect will set the target
   useEffect(() => {
-    // If the target is set we should wrap around them
     if (MouseState.target) {
       const targetBounds = MouseState.target.getBoundingClientRect();
 

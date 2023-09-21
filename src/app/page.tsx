@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main className="h-screen flex gap-12 bg-slate-600 w-full items-center justify-center p-6">
-      {/* This button uses a hook to wrap when you need more control */}
+      {/* This button uses the hook directly to wrap, this can be useful if you need a bit more control over the element*/}
       <button
         ref={wrapCursorRef as any}
         className=" text-white bg-black px-6 py-3 rounded-md ring-1 ring-white/40 shadow"
